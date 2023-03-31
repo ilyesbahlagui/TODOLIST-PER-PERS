@@ -1,0 +1,15 @@
+<div class="d-flex flex-wrap col-12 justify-content-between align-items-center" >
+    <div class="card mt-4" *ngFor="let user of user$ |async" style="width: 18rem;">
+      <img [src]="user.image" class="card-img-top" [alt]="" style="height: 20rem;">
+      <div class="card-body d-flex justify-content-between ">
+        <h5>{{user.name}}</h5>
+        <div class="d-flex text-center justify-content-center voir-taches"  routerLink="/todolist/{{user.name}}/{{user.id}}">
+          <span >Voir ses Tâches</span>
+          <i class="ps-2 pt-1 fa-solid fa-eye" style="color: #49be3a;font-size: 18px;"></i>
+        </div>
+      
+        <!-- <span (click)="">{{ film.favoris?'en Favoris':'pas en Favoris' }}</span> -->
+      </div>
+    </div>
+  </div>
+

@@ -1,0 +1,38 @@
+<div *ngIf="editable">
+
+  <h2 class="text-center">Update d'une tâche</h2>
+
+  <form class="d-flex flex-column  text-center mt-5" #formUpdateTodo="ngForm" (ngSubmit)="onSubmit(formUpdateTodo)">
+   
+      <input required class="form-control" id="id" type="hidden" name="id" [(ngModel)]="todo.id" >
+      <input required class="form-control" id="idUser" type="hidden" name="idUser" [(ngModel)]="todo.idUser" >
+  
+    <div class="mb-3 d-flex align-items-center justify-content-center col-6">
+      <label class=" d-block pe-1 mx-3" for="todo">Tâche:</label>
+      <input required class="form-control" id="todo" type="text" name="text" [(ngModel)]="todo.text" >
+    </div>
+  
+    <div class="d-flex align-items-center  mb-3 col-6">
+      <label class="d-block mx-3 " for="done">Faite ?</label>
+      <input class="form-check-input " id="done" type="checkbox" name="done" [(ngModel)]="todo.done" >
+    </div>
+    <div class="mb-3 d-flex align-items-center justify-content-center col-6">
+      <label class=" d-block pe-1" for="todo">Catégorie:</label>
+  
+      <select name="categorie" class="form-select " [(ngModel)]="todo.categorie">
+        <option value="normal" selected>normal</option>
+        <option value="important">important</option>
+        <option value="urgent">urgent</option>
+      </select>
+  
+    </div>
+  
+    <div>
+      <button  class="btn col-1" style="background-color:#e4cf15;color: white;cursor: pointer!important;" type="submit"
+      [disabled]="formUpdateTodo.invalid"><i class="fa-solid fa-edit"></i></button>
+    </div>
+  
+  </form>
+  
+  <hr>
+</div>

@@ -1,0 +1,58 @@
+<div class="container">
+  <h1 class="text-center mb-2">Tâches de {{name}} : </h1>
+  <!-- FORMULAIRE CREATION -->
+  <app-todo-form [idUser]="idUser"></app-todo-form>
+  <!-- FILTRE -->
+  <div class=" mb-3 d-flex align-items-center justify-content-center ">
+    <label class=" d-block pe-1">CATEG:</label>
+    <div class="col-2">
+      <select name="categorie" class="form-select "  [(ngModel)]="categorie" (click)="filtreCateg()">
+        <option  value="tous"   selected>Tous</option>
+        <option value="normal" >normal</option>
+        <option value="important">important</option>
+        <option value="urgent" >urgent</option>
+      </select>
+    </div>
+    <div class="d-flex align-items-center mt-3  mb-3 ">
+      <label class="d-block mx-3 " for="done">filtre </label>
+      <select name="categorie" class="form-select " [(ngModel)]="done" (click)="filtreDone()">
+        <option value="true" >Faite</option>
+        <option value="false">à Faire</option>
+      
+      </select>
+    </div>
+
+  </div>
+
+  <!-- TABLE CRUD -->
+  <div style="overflow-x:auto;" class=" container col-7">
+    <table class="table border">
+      <thead class="thead-light">
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Tâche</th>
+          <th scope="col">Etat </th>
+          <th scope="col">action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr #trTag *ngFor="let todo of todos$ |async;index as i" >
+          <th scope="row" [class.done]="todo.done">{{i+1}}</th>
+          <td [class.done]="todo.done">{{ todo.text }}</td>
+          <td [class.done]="todo.done">{{ todo.done? 'Faite' : 'non Faite' }}</td>
+          <td>
+            <i (click)="getUpdateTodo(todo)" class="pe-3 ">✎</i>
+            <i (click)="delete(todo)" class="pe-3 fa-solid fa-trash"></i>
+
+          </td>
+        </tr>
+
+      </tbody>
+    </table>
+  </div>
+  <!-- FORMULAIRE EDITION -->
+  <app-todo-form-edit [todo]="editTodo" [editable]="editable"></app-todo-form-edit>
+
+</div>
+
+<!-- <app-todo-details ></app-todo-details> -->

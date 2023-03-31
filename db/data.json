@@ -1,0 +1,71 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Alice",
+      "image": "https://randomuser.me/api/portraits/women/1.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Bob",
+      "image": "https://randomuser.me/api/portraits/men/2.jpg"
+    },
+    {
+      "id": 3,
+      "name": "Charlie",
+      "image": "https://randomuser.me/api/portraits/men/3.jpg"
+    },
+    {
+      "id": 4,
+      "name": "David",
+      "image": "https://randomuser.me/api/portraits/men/4.jpg"
+    },
+    {
+      "id": 5,
+      "name": "Emily",
+      "image": "https://randomuser.me/api/portraits/women/5.jpg"
+    }
+  ],
+  "todos": [
+    {
+      "id": 2,
+      "idUser": "1",
+      "text": "ppp",
+      "categorie": "important",
+      "editable": false,
+      "done": false
+    },
+    {
+      "idUser": "3",
+      "text": "test",
+      "categorie": "normal",
+      "editable": false,
+      "done": false,
+      "id": 7
+    },
+    {
+      "idUser": "3",
+      "text": "test",
+      "categorie": "important",
+      "editable": false,
+      "done": false,
+      "id": 8
+    },
+    {
+      "idUser": "3",
+      "text": "papa",
+      "categorie": "important",
+      "editable": false,
+      "done": false,
+      "id": 9
+    },
+    {
+      "id": 10,
+      "idUser": "1",
+      "text": "test",
+      "categorie": "important",
+      "editable": false,
+      "done": false
+    }
+  ]
+}

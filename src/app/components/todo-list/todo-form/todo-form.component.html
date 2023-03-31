@@ -1,0 +1,32 @@
+<h2 class="text-center">Création d'une tâche</h2>
+
+<form class="d-flex flex-column  text-center mt-5" #formAddTodo="ngForm" (ngSubmit)="onSubmit(formAddTodo)">
+
+  <div class="mb-3 d-flex align-items-center justify-content-center col-6">
+    <label class=" d-block pe-1 mx-3" for="todo">Tâche:</label>
+    <input required class="form-control" id="todo" type="text" name="text" ngModel>
+  </div>
+
+  <div class="d-flex align-items-center  mb-3 col-6">
+    <label class="d-block mx-3 " for="done">Faite ?</label>
+    <input class="form-check-input " id="done" type="checkbox" name="done" ngModel>
+  </div>
+  <div class="mb-3 d-flex align-items-center justify-content-center col-6">
+    <label class=" d-block pe-1" for="todo">Catégorie:</label>
+
+    <select name="categorie" class="form-select " ngModel>
+      <option value="normal" selected>normal</option>
+      <option value="important">important</option>
+      <option value="urgent">urgent</option>
+    </select>
+
+  </div>
+
+  <div>
+    <button  class="btn col-1" style="background-color:#49be3a;color: white;cursor: pointer!important;" type="submit"
+    [disabled]="formAddTodo.invalid"><i class="fa-solid fa-plus"></i></button>
+  </div>
+
+</form>
+
+<hr>
